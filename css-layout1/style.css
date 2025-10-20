@@ -1,0 +1,33 @@
+body{
+    background-color: goldenrod;
+}
+.box{
+    width: 300px;
+    height: 100px;
+    outline: 2px solid white;
+    padding: top 20px;;
+    background-color:aquamarine;
+    margin:20px;
+}
+
+#one{
+/* visibility: hidden; */
+/* display: none; */
+position: relative;
+/* top: 30px; */
+left: 20px;
+}
+#one:hover{
+/* visibility: hidden; */
+/* display: none; */
+}
+#two:active{
+    background-color: blueviolet;
+}
+#three {
+  height: 2000px;
+} 
+#one{
+    position: sticky;
+    top:0px;
+}

@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+#main-wrapper{
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+    background-color: palevioletred;
+    margin: auto;
+}
+#headline-wrapper{
+    height: 50px;
+    width: 100px;
+    background-color: aquamarine;
+}
+.nav-item{
+    height: 50px;
+    width: 100px;
+    background-color: aquamarine;
+    display:inline-block
+}

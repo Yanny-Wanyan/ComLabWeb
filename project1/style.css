@@ -3,11 +3,15 @@ body{
     background-color:#f4f2ee;
 }
 
-.menu-top{
+.nav-top{
     background-color: white;
     /* border-color: solid rgba(0, 0, 0, 0.9); */
     /* padding-left: 24px;
     padding-right: 24px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     width:100%;
     height:52px; 
     margin-bottom:24px;
@@ -18,25 +22,39 @@ body{
 }
 #icon-and-search-bar{
     /* display: flex; */
-    height: 52px;
+    height: 34px;
     /* position:fixed;
     left:52px; */
-   margin-left: 157px;
+    margin-top: 9px;
+   margin-left: 168px;
+}
+.nav-top-section{
+    margin-right: 25px;
+}
+.nav-top-section img{
+    /* display: flex; */
+    height: 45px;
+    margin-top: 5px;
+}
+#nav-top-more img{
+    display: flex;
+    height: 52px;
 }
 .container{
     background-color:#f4f2ee ;
     display: flex;
-    /* flex-direction: column;  */
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row; 
+    /* flex-wrap: wrap; */
     position: relative;
     top:60px;
 }
 #left-bar-image{
     /* display:flex; */
-    /* position:relative; */
-    /* top:60px; */
-    margin-left:170px;
-    gap:8px;
+    position:sticky; 
+     top:62px;
+    /* margin-left:170px; */
+    /* gap:8px; */
     width: 225px;
     height: auto;
 }
@@ -48,22 +66,66 @@ body{
     margin-left: 24px;
     margin-right: 24px;
     margin-top: 2px;
-    gap: 24px; 
-    /* display: flex; */
+    gap: 8px; 
+    display: flex;
+    flex-direction: column;
     width: 555px;    
 }
 #share-post-entry{
     height: 116px;
     width: 555px;
-    /* position: relative;
-    left: 250px; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* height: 116px; */
-    /* position:; */
+    /* margin-bottom: 10px; */
 }
-#right-bar{
-    width: 290px;
-    height:262px;
+/* .hr{
+    width: 555px;
+    height: 1px;
+    color: gray;
+} */
+#post-football-streaming img{
+width: 55px;
 }
+.post-slacking-technique-container{
+display: flex;
+flex-direction: column;
+gap: 0px;
+}
+.post-like-and-quit-container{
+display: flex;
+flex-direction: column;
+gap: 0px;    
+}
+.right-bar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    row-gap: 8px;
+}
+#slacking-games{
+ width: 300px;
+ height:274px;
+}
+#ad-office-snacks{
+    position: sticky;
+    top: 62px;
+    width: 300px;
+    border: initial;
+    border-radius: 8px;
+    background-color: white;
+    border-color:rgba(0, 0, 0, 0.9) ;
+}
+/* .ad-office-snacks img{
+border-radius: 8px;
+border-color:#dfdedb ;
+width: 300px;
+}
+.title-text{
+    display: flex;
+    width: 300px;
+    background-color: white;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-wrap: wrap;
+} */
