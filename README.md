@@ -1,9 +1,8 @@
 # Yanny ComLab Page
-Welcome to my ComLab [Homepage](https://yanny-wanyan.github.io/ComLabWeb/). 
 
-![Home](opening-banner.jpeg)
+![Home](opening-banner.png)
 
-Below you see my practices and projects throughout the semester:
+[Here](https://yanny-wanyan.github.io/ComLabWeb/) you see my practices and projects throughout the semester:
 
 * [Tutorial - How to smash roaches](tutorial)
 ![tutorial](tutorial-homepage.jpeg)
