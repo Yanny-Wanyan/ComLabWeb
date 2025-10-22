@@ -1,5 +1,5 @@
 # Yanny ComLab Page
-Welcome to my ComLab Homepage. 
+Welcome to my ComLab [Homepage](https://yanny-wanyan.github.io/ComLabWeb/). 
 
 ![Home](opening-banner.jpeg)
 
