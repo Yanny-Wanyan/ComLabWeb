@@ -402,126 +402,34 @@ border-bottom-color: rgba(0,0,0,0.35);
     display: flex;
     width: 220px;
     height: auto;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
 }
-.non-sticky-1 img:hover{
-    mask-image: url(assets/network-red.png);
-}
-.non-sticky-2:hover{
-background-color: darkgreen;
-}
-.sticky:hover{
+.run-1:hover{
     position: absolute;
-    top: 300px;
-    left:150px;
+    left:-70px;
+    top: 150px;
 }
-.sticky{
-    position: sticky;
-    top: 100px;
+.run-2:hover{
+    position: absolute;
+    left: 200px;
+    top: 700px;
 }
-
+.run-3:hover{
+    position: absolute;
+    left: 100x;
+    top: 1000px;
+}
+.run-4:hover{
+    position: absolute;
+    left: 300;
+    top: 1500px;
+}
 .show-all-text{
+    display: inline-block;
     font-size: 16px;
     font-weight: 600;
     margin-left: 600px;
     padding: 10px;
     color: rgb(97, 97, 97);
-}
-/* .network-plate{
-    position: relative;
-    display: flex;
-    width: 792px;
-}
-.network-plate-img{
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-#item-elvira{
-    display: flex;
-    width: 190px;
-    height: 300px;
-    position: sticky;
-    left: 205px;
-    top: 355px;
-} */
-
-/* #left-bar-image{ */
-    /* display:flex; */
-    /* position:sticky; 
-     top:62px; */
-    /* margin-left:170px; */
-    /* gap:8px; */
-    /* width: 225px;
-    height: auto;
-} */
-
-/* .main-body{ */
-    /* background-color: white;
-    position: relative;
-    top: 60px; */
-    /* margin-left: 24px;
-    margin-right: 24px;
-    margin-top: 2px;
-    gap: 8px; 
-    display: flex;
-    flex-direction: column;
-    width: 555px;    
-} */
-/* #share-post-entry{
-    height: 116px;
-    width: 555px; */
-    /* margin-bottom: 10px; */
-/* } */
-/* .hr{
-    width: 555px;
-    height: 1px;
-    color: gray;
-} */
-/* #post-football-streaming img{
-width: 55px;
-}
-.post-slacking-technique-container{
-display: flex;
-flex-direction: column;
-gap: 0px;
-}
-.post-like-and-quit-container{
-display: flex;
-flex-direction: column;
-gap: 0px;    
-}
-.right-bar{
-    display: flex;
-    flex-direction: column;
-    margin-top: 2px;
-    row-gap: 8px;
-}
-#slacking-games{
- width: 300px;
- height:274px;
-}
-#ad-office-snacks{
-    position: sticky;
-    top: 62px;
-    width: 300px;
-    border: initial;
-    border-radius: 8px;
-    background-color: white;
-    border-color:rgba(0, 0, 0, 0.9) ;
-} */
-/* .ad-office-snacks img{
-border-radius: 8px;
-border-color:#dfdedb ;
-width: 300px;
-}
-.title-text{
-    display: flex;
-    width: 300px;
-    background-color: white;
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-    text-wrap: wrap;
-} */
+} 
