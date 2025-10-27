@@ -1,30 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkedOut Test</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="nav-top">
-        <img src="assets/LinkedOut-search-bar.png" alt="" id="icon-and-search-bar">
+        <div class="search-bar">
+            <img src="assets/search-bar-orig.png" alt="" class="orig">
+            <img src="assets/search-bar-alt.png" alt="" class="alt">
+        </div>
         <div class="nav-top-section">
-            <img src="assets/Home.png" alt="">
-            <img src="assets/Following.png" alt="">
-            <img src="assets/Nearby.png" alt="" >
-            <img src="assets/nav-top-me.png" alt="">
-            <img src="assets/nav-top-more.png" alt="" id="nav-top-more">
+            <a href="index.html"><img src="assets/focus.png" alt="" class="nav-path"></a>
+            <a href="network.html"><img src="assets/nearby.png" alt="" class="nav-path"></a>
+            <a href="me.html"><img src="assets/me.png" alt="" class="nav-path"></a>
         </div>
     </div>
-    <div class="container">
+    <div class="homepage-main-body">
         <div class="left-bar">
+            <div class="left-bar-profile">
+                <img src="assets/profile-orig.png" alt="" class="orig">
+                <img src="assets/profile-alt.png" alt="" class="alt">
+            </div>
+        </div>
+        <div class="container">
+            <div class="post-header">
+                <img src="assets/headshot.png" alt="" id="headshot">
+                <div class="persona">
+                    <p id="name">Ethan Zhou</p>
+                    <p class="small-text">Founder & Chief Vision Officer at EmpathIQ Technologies</p>
+                    <p class="small-text">4h·Singapore</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p class="orig">Humbled and honored to have spoken at the <span class="text-bold-blue">Global Leadership
+                        Forum
+                        2025</span>, sharing a few insights from my journey in corporate management.</p>
+                <p class="alt">Been trying to get this speaker slot for three years — finally made it. Hope the PR team
+                    posts it before the others do.</p>
+
+                <p>For me, leadership isn't about control or perfection — it’s about <span
+                        class="text-bold-black">empowering others</span> to own the mission. When goals become shared
+                    ambitions, everyone contributes not because they have to, but because they want to. That’s how
+                    legends —
+                    and breakthroughs — are made. </p>
+
+                <p>Other speakers were equally inspiring. One talk on balance resonated with me — sustaining teams
+                    without
+                    burnout. A reminder that I should let my team rest more. We’ll explore how to implement that next
+                    quarter.</p>
+                <p class="text-bold-blue">#leadership #growth #empathy #balance #inspiration</p>
+            </div>
+            <img src="assets/global-leadership-forum.png" alt="" class="post-img">
+            <div class="post-footer">
+                <img src="assets/homepage-post-footer.png" alt="">
+            </div>
+
+            <div class="comments-wrapper">
+                <div class="comment-item">
+                    <div class="commenter-bio">
+                        <img src="assets/Sophia-Patel.png" alt="" class="comment-headshots">
+                        <div class="commenter-info">
+                            <p class="commenter-name">Sophia Patel</p>
+                            <p class="small-text">Program Director, Global Leadership Forum 2025</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="orig">Honored to have you speak at the Global Leadership Forum 2025. You truly
+                            inspired
+                            us!</p>
+                        <p class="alt">Went 10 minutes over time again. Anyway, let's say it is fine.</p>
+                    </div>
+
+                </div>
+                <div class="comment-item">
+                    <div class="commenter-bio">
+                        <img src="assets/Michael-Reyes.png" alt="" class="comment-headshots">
+                        <div class="commenter-info">
+                            <p class="commenter-name">Michael Reyes</p>
+                            <p class="small-text">Operations Team, EmpathIQ</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="orig">Proud to work under such visionary leadership! Truly inspired every day 💙</p>
+                        <p class="alt">Honestly,my only ambition is to survive this quarter and get my wages in time.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="comment-item">
+                    <div class="commenter-bio">
+                        <img src="assets/William-He.png" alt="" class="comment-headshots">
+                        <div class="commenter-info">
+                            <p class="commenter-name">William He</p>
+                            <p class="small-text">Product Manager, EmpathIQ</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="orig">Incredible reflection, Ethan. Loved your point on shared ambition — that’s what
+                            sets
+                            great leaders apart.</p>
+                        <p class="alt">But can you please don’t text me after 11pm any more, my god.</p>
+                    </div>
+
+                </div>
+                <div class="comment-item">
+                    <div class="commenter-bio">
+                        <img src="assets/Laura-Ng.png" alt="" class="comment-headshots">
+                        <div class="commenter-info">
+                            <p class="commenter-name">Laura Ng</p>
+                            <p class="small-text">Partner at Horizon Capital</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="orig">Congratulations on representing EmpathIQ so well on the global stage! The world
+                            needs more leaders like you.</p>
+                        <p class="alt">The young man is talented, but still needs time to prove real stability.</p>
+                    </div>
+
+                </div>
+                <div class="comment-item">
+                    <div class="commenter-bio">
+                        <img src="assets/Marcus-Lee.png" alt="" class="comment-headshots">
+                        <div class="commenter-info">
+                            <p class="commenter-name">Marcus Lee</p>
+                            <p class="small-text">Business Student</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="orig">Great insights, Mr. Zhou! Thank you for sharing your leadership journey.</p>
+                        <p class="alt">Look at me, look at me, pleeease! I am the one who asked you a question and you
+                            said
+                            it was impressive!</p>
+                    </div>
+
+                </div>
+                <div class="comment-item">
+                    <div class="commenter-bio">
+                        <img src="assets/Kevin-Wong.png" alt="" class="comment-headshots">
+                        <div class="commenter-info">
+                            <p class="commenter-name">Kevin Wong</p>
+                            <p class="small-text">Senior Engineer, EmpathIQ</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="orig">As always, you remind us that leadership is about people, not power. Thank you
+                            for
+                            leading with empathy 🙌</p>
+                        <p class="alt">I can tell rest is impossible even in next quarter.</p>
+                    </div>
+
+                </div>
+
+                <div class="comment-item">
+                    <div class="commenter-bio">
+                        <img src="assets/Raymond-Chen.png" alt="" class="comment-headshots">
+                        <div class="commenter-info">
+                            <p class="commenter-name">Raymond Chen</p>
+                            <p class="small-text"> Founder & CEO at Synapse Robotics</p>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="orig">An honor to hear you speak! The future of leadership looks bright.</p>
+                        <p class="alt">Hope next year I can stand there too.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage-right-bar">
+            <img src="assets/homepage-right-bar.png" alt="" class="orig">
+            <img src="assets/ad-office-snacks.png" alt="" class="alt">
+        </div>
+    </div>
+    <!-- <div class="left-bar">
             <img src="assets/left-bar.jpeg" alt="" id="left-bar-image">
         </div>
         <div class="main-body">
-            <img src="assets/share-post-entry.jpeg" alt="" id="share-post-entry">
-            <!-- <hr class="hr"> -->
-            <img src="assets/post-football-streaming.png" id="post-football-streaming">
+            <img src="assets/share-post-entry.jpeg" alt="" id="share-post-entry"> -->
+    <!-- <hr class="hr"> -->
+    <!-- <img src="assets/post-football-streaming.png" id="post-football-streaming">
             <div class="post-slacking-technique-container">
                 <img src="assets/post-slacking-technique-header.png" alt="" class="post-slacking-technique">
             <video class="post-slacking-technique" id="post-slacking-technique-video" controls muted loop>
@@ -41,12 +199,12 @@
         </div>
         <div class="right-bar">
             <img src="assets/slacking-games.png" alt="" id="slacking-games">
-            <img src="assets/ad-office-snacks.png" alt="" id="ad-office-snacks"> 
-            <!-- <div class="ad-office-snacks">
+            <img src="assets/ad-office-snacks.png" alt="" id="ad-office-snacks">  -->
+    <!-- <div class="ad-office-snacks">
                 <img src="https://m.media-amazon.com/images/I/71lFoJvnJbL._SL1500_.jpg" alt="">
                 <h2 class="title-text">Healthy Office Snacks😋|The Only Bean High Protein Snacks</h2>
             </div> -->
-        </div>
-
+    </div>
 </body>
+
 </html>

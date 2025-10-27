@@ -2,7 +2,7 @@
 
 ![Home](opening-banner.png)
 
-[Here](https://yanny-wanyan.github.io/ComLabWeb/) you see my practices and projects throughout the semester:
+[Here](https://yanny-wanyan.github.io/ComLabWeb/)you see my practices and projects throughout the semester:
 
 * [Tutorial - How to smash roaches](tutorial)
 ![tutorial](tutorial-homepage.jpeg)
