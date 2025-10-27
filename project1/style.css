@@ -7,7 +7,12 @@ body{
 }
 .nearby{
     background-color: #9ab3ec;
-    
+    /* background-image: url(assets/map-5f.jpg); */
+    background-image: url(assets/map.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: sticky; 
+
 }
 p{
     margin: 0px;
@@ -82,9 +87,9 @@ hr{
 border-bottom-color: rgba(0,0,0,0.35);
 }
 
-.me:hover{
+/* .me:hover{
     mask-image: url(assets/nav-top-me.png);
-}
+} */
 /* left-bar*/
 /* in Homepage */
 .left-bar-profile{
@@ -115,36 +120,28 @@ border-bottom-color: rgba(0,0,0,0.35);
 
 /* left-bar*/
 /* in Nearby */
-.nearby-container{
+/* .nearby-container{
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     gap: 50px;
     margin-top: 80px;
-}
-.nearby-left-bar{
+} */
+.nearby-right-bar{
     position: sticky;
-    top: 80px;
-    margin-right: 50px;
-     align-items:center;
+    top: 150px;
+    right: 20px;
 }
-.nearby-left-bar img{
-    width: 300px;
-}
-.location{
-    background-color: white;
-    width: 300px;
-    border-radius: 8px;
-    margin-top: 16px;
-    border: 1px solid rgba(0,0,0,0.15);
-}
-#google-map-location{
-    height: 200px;
-    width: 300px;
-    margin:0px;
-    margin-top: 10px;
-
+.nearby-right-bar img{ 
+    position: sticky;
+    top: 150px;
+    right: 20px;
+    display: flex;
+    width: 150px;
+    margin-left: 20px;
+    margin-top: 80px;
+    border-radius: 0.8rem;
+    border: 3px solid rgba(0,0,0,0.15);
 }
 .title{
     font-size: 24px;
@@ -157,20 +154,17 @@ border-bottom-color: rgba(0,0,0,0.35);
 /* nearby-main-body */
 .nearby-main-body{
     display: flex;
-    flex-wrap: wrap;
-    width: 600px;
 }
 .nearby-people img{
-    width: 230px;
-    height: 300px;
-    /* height: 370px; */
+    width: 100px;
+    height: 130px;
     margin: 10px;
     margin-top: 0px;
     border-radius: 0.8rem;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 3px solid rgba(61, 46, 46, 0.65);
 }
 .nearby-people .orig{
-    display: flexbox;
+    display: flex;
 }
 .nearby-people .alt{
     display: none;
@@ -181,7 +175,51 @@ border-bottom-color: rgba(0,0,0,0.35);
 .nearby-people:hover .orig{
     display: none;
 }
-
+#nearby-david{
+    position: absolute;
+    left: 40px;
+    top: 300px;
+}
+#nearby-tong{
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+#nearby-messi{
+    position: absolute;
+    left: 1150px;
+    top: 500px;
+}
+#nearby-tom{
+    position: absolute;
+    left: 200px;
+    top: 700px;
+}
+#nearby-nina{
+    position: absolute;
+    left: 700px;
+    top: 500px;
+}
+#nearby-yiyi{
+    position: absolute;
+    left: 300px;
+    top: 1500px;
+}
+#nearby-alex{
+    position: absolute;
+    left: 1200px;
+    top: 1300px;
+}
+#nearby-elvira{
+    position: absolute;
+    left: 600px;
+    top: 1450px;
+}
+#nearby-zyton{
+    position: absolute;
+    left: 800px;
+    top: 1200px;
+}
 /* posts body */
 .container{
     background-color:#f4f2ee ;
@@ -194,7 +232,7 @@ border-bottom-color: rgba(0,0,0,0.35);
     margin-left: 40px; */
     margin-top: 80px;
     border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.154);
 }
 .post-header{
     display:flex;
@@ -372,11 +410,13 @@ border-bottom-color: rgba(0,0,0,0.35);
 background-color: darkgreen;
 }
 .sticky:hover{
-    background-color: #0A66c2;
+    position: absolute;
+    top: 300px;
+    left:150px;
 }
-.sticky img{
+.sticky{
     position: sticky;
-    top: 80px;
+    top: 100px;
 }
 
 .show-all-text{
