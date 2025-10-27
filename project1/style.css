@@ -16,6 +16,7 @@ p{
 hr{
     color: rgba(0,0,0,0.35);
 }
+
 .homepage-main-body{
     display: flex;
     flex-direction: row;
@@ -25,20 +26,6 @@ hr{
 }
 .nav-top{
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width:100%;
-    height:52px; 
-    margin-bottom:24px;
-    position: fixed;
-    top:0px;
-    z-index: 100;
-}
-.nearby-nav-top{
-    background-color: white;
-    /* #e9f0f6; */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -68,7 +55,7 @@ hr{
     display: flex;
     border-color: gray;
     border-width: 2px;
-    border-style: solid;
+    border-style: groove;
     border-radius: 0.3rem;
 }
 
@@ -77,18 +64,27 @@ hr{
     gap: 5px;
 }
 
-.nav-path{
+.nav-top-section img{
     height: 45px;
     margin-top: 5px;
     display: inline-block; 
     padding-bottom: 1px; 
     border-bottom: 2px solid rgba(0,0,0,0.15);
 }
-.nav-path:hover{
+/* .me img{
+    height: 45px;
+    margin-top: 5px;
+    display: inline-block; 
+    padding-bottom: 1px; 
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+} */
+.nav-top-section img:hover{
 border-bottom-color: rgba(0,0,0,0.35);
 }
 
-
+.me:hover{
+    mask-image: url(assets/nav-top-me.png);
+}
 /* left-bar*/
 /* in Homepage */
 .left-bar-profile{
@@ -364,12 +360,12 @@ border-bottom-color: rgba(0,0,0,0.35);
     border: 1px solid rgba(0,0,0,0.15);
     position: relative;
 }
-.network-item img{
+.network-section img{
     display: flex;
     width: 220px;
     height: auto;
 }
-.non-sticky-1:hover{
+.non-sticky-1 img:hover{
     mask-image: url(assets/network-red.png);
 }
 .non-sticky-2:hover{
