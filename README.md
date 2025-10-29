@@ -9,5 +9,5 @@
 The assignment requires us to create an absurd tutorial, either teach something useless or introduce in a way that make simple things ridiculous or extremely complicated. Thus, I create a tutorial to kill roaches, which includes interactive practices and funny break-down.
 
 * [Shanzhai Website - LinkedOut](project1)
-![LinkedinOut - in progress](project1-homepage.jpeg)
-This is my midterm project - a shanzhai website twisting Linkedin. It is named LinkedOut and designed to satirize Linkedin's elitism and hyprocisy.
+![LinkedinOut](project1/assets/readme-cover.jpeg)
+LinkedOut is a parody of the professional networking site LinkedIn, created to satirize its culture of elitism, self-branding, and polished inauthenticity. On LinkedOut, you can hear people’s real voices and discover your friends’ true selves. Here, hovering isn’t just an action—it’s the key to uncovering what’s hidden beneath the surface.
