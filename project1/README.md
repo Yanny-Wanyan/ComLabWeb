@@ -125,5 +125,4 @@ One challenge I faced was organizing the `<div>` hierarchy. Initially, I assigne
 ## Reflection
 In my first draft, I largely copied LinkedIn’s layout, changing only content and subtle design details. Leon pointed out that adhering too closely limited my ability to convey my own message—if the visual language is too familiar, viewers may overlook the content entirely. This feedback inspired me to experiment with website techniques like hover interactions and positional shifts to enhance storytelling and highlight authenticity beneath the polished surface. While these interactive elements work well conceptually, I am less satisfied with the overall polish and time management; my project ended up more humble compared to classmates who produced fully refined narratives. Moving forward, I would focus on balancing workload, refining layout precision, and expanding creative storytelling techniques. I also hope to explore more playful manipulations of interface elements to further challenge assumptions about digital identity and social connections.
 
-## Credit
-Huge thanks to Leon and TA Candy!
+![closing-banner](assets/closing-banner.jpg)
