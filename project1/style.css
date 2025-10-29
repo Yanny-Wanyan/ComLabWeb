@@ -1,3 +1,4 @@
+/* same for three pages */
 body{
     margin:0px;
     background-color:#f4f2ee;
@@ -76,22 +77,12 @@ hr{
     padding-bottom: 1px; 
     border-bottom: 2px solid rgba(0,0,0,0.15);
 }
-/* .me img{
-    height: 45px;
-    margin-top: 5px;
-    display: inline-block; 
-    padding-bottom: 1px; 
-    border-bottom: 2px solid rgba(0,0,0,0.15);
-} */
+
 .nav-top-section img:hover{
 border-bottom-color: rgba(0,0,0,0.35);
 }
-
-/* .me:hover{
-    mask-image: url(assets/nav-top-me.png);
-} */
+/* Homepage */
 /* left-bar*/
-/* in Homepage */
 .left-bar-profile{
     height: 303px;
 }
@@ -118,15 +109,7 @@ border-bottom-color: rgba(0,0,0,0.35);
     display: none;
 }
 
-/* left-bar*/
-/* in Nearby */
-/* .nearby-container{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 80px;
-} */
+/* right bar */
 .nearby-right-bar{
     position: sticky;
     top: 150px;
@@ -258,11 +241,7 @@ border-bottom-color: rgba(0,0,0,0.35);
     font-size: 12px;
     color: rgb(97, 97, 97);
 }
-/* .post-content{
-    padding-top: 10px;
-    font-weight: 400;
-    font-size: 14px;
-} */
+
 .post-content p{
     display:block;
     font-weight: 400;
