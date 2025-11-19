@@ -5,6 +5,7 @@ let firstButton = document.querySelector("#firstButton");
 function colorize(elm){
 // elm.innerText = "started";
 elm.style.backgroundColor = "red";
+elm.classList.toggle(".circle");
 }
 
 function clickedButton() {
