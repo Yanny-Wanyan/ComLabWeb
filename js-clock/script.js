@@ -17,7 +17,7 @@ function getTheTime() {
     secSelector.style.left = secPos + "%"
 
     let hColor = h * 6;
-    let mColor = m * 5 / 3;
+    let mColor = 100-m * 5 / 3;
     let sColor = 100-s * 5 / 3;
     body.style.backgroundColor = `hsl(${hColor}, ${mColor}%, ${sColor}%)`;
 }
