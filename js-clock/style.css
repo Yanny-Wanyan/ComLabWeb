@@ -1,0 +1,73 @@
+body {
+    height: 100%;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    /* vertically aligns not working  */
+    /* align-items: center; */
+    justify-content: center;
+}
+h1{
+    margin-top: 100px;
+   text-align: center; 
+}
+#clock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin: 50px auto;
+    margin-top: 80px;
+}
+.bar-title h2{
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+h2{
+color: black;
+}
+.time-bar {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Hours Bar: Hue Gradient (0 to 360) */
+#hours-bar {
+    background: linear-gradient(to right,
+            hsl(0, 100%, 50%),
+            hsl(60, 100%, 50%),
+            hsl(120, 100%, 50%),
+            hsl(180, 100%, 50%),
+            hsl(240, 100%, 50%),
+            hsl(300, 100%, 50%),
+            hsl(360, 100%, 50%));
+}
+
+/* Minutes Bar: Saturation Gradient (100% to 0%) */
+#minutes-bar {
+    background: linear-gradient(to right,
+            hsl(0, 100%, 50%),
+            hsl(0, 50%, 50%),
+            hsl(0, 0%, 50%));
+
+}
+
+/*  Seconds Bar: Lightness Gradient (100% to 0%) */
+#seconds-bar {
+    background: linear-gradient(to right,
+            hsl(0, 0%, 100%),
+            hsl(0, 0%, 50%),
+            hsl(0, 0%, 0%));
+}
+
+.selector {
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 60px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 1s linear;
+}
