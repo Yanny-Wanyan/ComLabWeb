@@ -9,14 +9,14 @@ function getTheTime() {
     let s = now.getSeconds();    // 0–59
     console.log(h, m, s);
 
-    let hourPos = h * 5 / 3;
+    let hourPos = h * 25 / 6;
     let minPos = m * 5 / 3;
     let secPos = s * 5 / 3;
     hourSelector.style.left = hourPos + "%"
     minSelector.style.left = minPos + "%"
     secSelector.style.left = secPos + "%"
 
-    let hColor = h * 6;
+    let hColor = h * 15;
     let mColor = 100-m * 5 / 3;
     let sColor = 100-s * 5 / 3;
     body.style.backgroundColor = `hsl(${hColor}, ${mColor}%, ${sColor}%)`;
