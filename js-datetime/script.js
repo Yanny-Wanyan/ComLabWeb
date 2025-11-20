@@ -9,10 +9,6 @@ function getTheTime(){
 
     console.log( h, m, s );
     secondsBox.innerHTML = "";
-    repeat(s, function(){
-      let div = document.createElement("div")
-      secondsBox.append(div)
-    })
 
 }
 
