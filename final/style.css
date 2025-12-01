@@ -1,0 +1,57 @@
+body {
+    background-color: black;
+    /*     
+    background-image: 
+    url(assets/background-image-1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    background-attachment: fixed; */
+}
+
+
+.moving-sun-and-moon {
+    left: 50%;
+    top: 50%;
+    position: fixed;
+}
+
+.moving-sun-and-moon img {
+    height: 200px;
+    width: 200px;
+    margin-left: -50%;
+    margin-top: -50%;
+
+}
+/* gardient color generator: https://cssgradient.io/ */
+.daytime-background {
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background-size: cover;           /* 保证填满视口 */
+  background-position: center center;
+  background-attachment: fixed;     /* 如果想要固定视差效果 */
+  min-height: 100vh;                /* 确保覆盖全屏 */
+}
+.midnight-background {
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(32,32,59,1) 35%, rgba(18,41,46,1) 100%);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+/* @keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    50% {
+        transform: translate(0px, 0px) scale(1.2);
+    } */
+/* } */
+
+.windowHeight {
+    height: 100vh;
+    width: 100%;
+}
+
