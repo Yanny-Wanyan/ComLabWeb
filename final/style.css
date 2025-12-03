@@ -1,4 +1,4 @@
-/* 允许横向和纵向滚动 */
+
 html, body {
     overflow-x: auto;
     overflow-y: auto;
@@ -8,13 +8,6 @@ html, body {
 
 body {
     background-color: black;
-    /*     
-    background-image: 
-    url(assets/background-image-1.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
-    background-attachment: fixed; */
 }
 
 
@@ -35,10 +28,10 @@ margin-left: -50%;
 /* gardient color generator: https://cssgradient.io/ */
 .daytime-background {
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-  background-size: cover;           /* 保证填满视口 */
+  background-size: cover;           
   background-position: center center;
-  background-attachment: fixed;     /* 如果想要固定视差效果 */
-  min-height: 100vh;                /* 确保覆盖全屏 */
+  background-attachment: fixed;     
+  min-height: 100vh;               
 }
 .midnight-background {
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(32,32,59,1) 35%, rgba(18,41,46,1) 100%);
@@ -47,17 +40,6 @@ margin-left: -50%;
   background-attachment: fixed;
   min-height: 100vh;
 }
-/* @keyframes pulse {
-
-    0%,
-    100% {
-        transform: translate(0px, 0px) scale(1);
-    }
-
-    50% {
-        transform: translate(0px, 0px) scale(1.2);
-    } */
-/* } */
 
 .windowHeight {
     height: 100vh;
@@ -74,13 +56,13 @@ margin-left: -50%;
     font-weight: 600;
 }
 
-/* ✅ 字母样式 */
+
 #follow .grandpa {
     display: inline-block;
     transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
-/* 额外追加的页面：8 屏高，用 CSS 渐变从夜到日 */
+
 .extra-page {
   height: 800vh;
   width: 100%;
@@ -96,19 +78,21 @@ margin-left: -50%;
   );
 }
 
-/* small-town-background：横向长图，高度自适应屏幕 */
+
 #small-town-background {
-  height: 100vh;  /* 高度 = 屏幕高度 */
-  width: fit-content;  /* 宽度适应内容（图片宽度） */
+  height: 100vh;  
+  width: 100vw;
+  overflow-x: scroll;
   display: block;
   margin: 0;
   background-color: rgba(197, 221, 233, 1);
+      
 }
 
 #small-town-background img {
-  height: 100%;  /* 图片高度 = 屏幕高度 */
-  width: auto;    /* 宽度按比例自动计算 */
+  height: 100%; 
+  width: auto;    
   display: block;
-  object-fit: contain;  /* 保持图片比例 */
+  object-fit: contain;  
   margin: 0px;
 }
