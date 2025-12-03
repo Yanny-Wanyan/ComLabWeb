@@ -1,3 +1,11 @@
+/* 允许横向和纵向滚动 */
+html, body {
+    overflow-x: auto;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: black;
     /*     
@@ -14,12 +22,13 @@ body {
     left: 50%;
     top: 50%;
     position: fixed;
+   
 }
 
 .moving-sun-and-moon img {
     height: 200px;
     width: 200px;
-    margin-left: -50%;
+margin-left: -50%;
     margin-top: -50%;
 
 }
@@ -54,4 +63,52 @@ body {
     height: 100vh;
     width: 100%;
 }
+#follow {
+    position: fixed;
+    display: none;
+    pointer-events: none;
+    background: rgba(255,255,255,0.8);
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: #222;
+    font-weight: 600;
+}
 
+/* ✅ 字母样式 */
+#follow .grandpa {
+    display: inline-block;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* 额外追加的页面：8 屏高，用 CSS 渐变从夜到日 */
+.extra-page {
+  height: 800vh;
+  width: 100%;
+  margin: 0px;
+  padding:0px;
+  background: linear-gradient(to bottom,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(32, 32, 59, 1) 12.5%,
+    rgba(60, 60, 100, 1) 25%,
+    rgba(120, 150, 200, 1) 50%,
+    rgba(140, 180, 220, 1) 75%,
+    rgba(197, 221, 233, 1) 100%
+  );
+}
+
+/* small-town-background：横向长图，高度自适应屏幕 */
+#small-town-background {
+  height: 100vh;  /* 高度 = 屏幕高度 */
+  width: fit-content;  /* 宽度适应内容（图片宽度） */
+  display: block;
+  margin: 0;
+  background-color: rgba(197, 221, 233, 1);
+}
+
+#small-town-background img {
+  height: 100%;  /* 图片高度 = 屏幕高度 */
+  width: auto;    /* 宽度按比例自动计算 */
+  display: block;
+  object-fit: contain;  /* 保持图片比例 */
+  margin: 0px;
+}

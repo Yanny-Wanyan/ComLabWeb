@@ -1,28 +1,40 @@
 const moon = document.querySelector("#moon");
 const sun = document.querySelector("#sun");
 const body = document.querySelector("body");
+const moonImg = document.querySelector("#moon-img");
+const follow = document.getElementById("follow");
 
 const r = 300;
 
-//set initial position
+
+let scrollFinished = false;
+let isFollowing = false;
+let extraPagesCreated = false;
+let extraStart = null;
+let extraHeight = 0;
+
+// set initial position
 moon.style.transform = `translate(${-r}px, 0px)`;
 sun.style.transform = `translate(${r}px, 0px)`;
 
-//get the scrolling position data
+// get the scrolling position data
 function getScrollPercentage() {
-    let scrollTop = window.scrollY
-    let maxScroll = document.body.scrollHeight - window.innerHeight
-    let perc = (scrollTop / maxScroll) * 100
-
-    return perc
+    let scrollTop = window.scrollY;
+    let maxScroll = document.body.scrollHeight - window.innerHeight;
+    let perc = (scrollTop / maxScroll) * 100;
+    return perc;
 }
 
-//let moon and sun translate in a circle
+// let moon and sun translate in a circle
 window.addEventListener("scroll", function () {
     const percentage = getScrollPercentage();
+    const scrollTop = window.scrollY;
+
+
+
 
     // convert percentage (0..100) to radians (0..2π)
-    rotations = 3
+    const rotations = 2.25;
     const angle = (percentage / 100) * Math.PI * 2 * rotations;
 
     // compute positions && Brightness for moon and sun
@@ -32,57 +44,78 @@ window.addEventListener("scroll", function () {
     const moonY = Math.sin(angle + Math.PI) * r;
     const sunB = Math.abs(sunY) * (1 / 5) + 40;
     const moonB = Math.abs(moonY) * (1 / 3);
-    
-    let backdropOpac = Math.abs(sunY)* (1 / 3)*(1/100);
-
-
 
     // apply transforms
     if (moon) moon.style.transform = 'translate(' + moonX + 'px, ' + moonY + 'px)';
     if (sun) sun.style.transform = 'translate(' + sunX + 'px, ' + sunY + 'px)';
 
-    // alternate visibility (hide when below horizon (y > 0)) && set brightness
+    // alternate visibility && set brightness
     if (moon) {
         if (moonY >= 0) {
-            // moon is below horizon -> hide
             moon.style.opacity = '0';
             body.classList.remove("midnight-background");
-            // body.classList.add("daytime-background");
         } else {
-            // moon is above horizon -> show and make background darker
             moon.style.opacity = '1';
             moon.style.filter = "brightness(" + moonB + "%)";
             body.classList.add("midnight-background");
-            // body.style.backgroundColor = 'black';
         }
     }
 
     if (sun) {
         if (sunY >= 0) {
-            // sun is below horizon -> hide
             sun.style.opacity = '0';
             body.classList.remove("daytime-background");
         } else {
-            // sun is above horizon -> show and make background brighter
             sun.style.opacity = '1';
             sun.style.filter = "brightness(" + sunB + "%)";
             body.classList.add("daytime-background");
-            // body.style.opacity = Math.max(0, Math.min(1, backdropOpac));
-            // body.style.backgroundColor = 'white';
         }
+
     }
-// console.log(moonB);
-    // console.log('moon', moonX.toFixed(1), moonY.toFixed(1), 'sun', sunX.toFixed(1), sunY.toFixed(1));
 
-console.log(percentage)
+    // scale the last moon
+    const finalStartPerc = 100 * (rotations - 1) / rotations;
+    if (percentage > finalStartPerc) {
+        const finalProgress = Math.max(0, Math.min(1, (percentage - finalStartPerc) / (100 - finalStartPerc)));
+        const scale = 1 + finalProgress;
+        moonImg.style.transform = `scale(${scale})`;
+    } else {
+        moonImg.style.transform = `scale(1)`;
+    }
 
-if (percentage > 67){
-    moon.style.transform = "scale(1.5)"
-} else if (percentage > 70){
-    moon.style.tranform = "scale(2)"
-} else if (percentage > 72){
-    moon.style.tranform = "scale(2)"
+    console.log(percentage);
+
+    //  true
+    if (percentage >= 99) {
+        scrollFinished = true;
+    }
+});  
+
+// create a function to follow the mouse
+function handleMouseMove(e) {
+    follow.style.left = e.clientX + 10 + "px";
+    follow.style.top = e.clientY + 10 + "px";
 }
+
+
+// only start the following of the grandpa when the scroll is finished and the moon is clicked
+moon.addEventListener("click", function () {
+    console.log("Moon clicked! scrollFinished:", scrollFinished, "isFollowing:", isFollowing);  // ✅ 调试用
+    
+    if (scrollFinished == true && isFollowing == false) {
+        follow.style.display = "block";
+        isFollowing = true;
+        document.addEventListener("mousemove", handleMouseMove);
+        
+        //set timeout to redirect to transition.html
+        setTimeout(() => {
+            window.location.href = "transition.html";
+        }, 500); 
+    } else {
+        console.log("not enough conditions to click");  
+    }
 });
+
+
 
 
