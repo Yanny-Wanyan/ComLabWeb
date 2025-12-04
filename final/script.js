@@ -1,7 +1,28 @@
-const moon = document.querySelector("#moon");
-const sun = document.querySelector("#sun");
+// create moon and sun elements in JS (no pre-existing HTML needed)
+let moon = document.querySelector('#moon');
+let sun = document.querySelector('#sun');
+if (!moon) {
+    moon = document.createElement('img');
+    moon.id = 'moon';
+    moon.className = 'moving-sun-and-moon';
+    moon.src = '';
+    moon.style.position = 'fixed';
+    moon.style.left = '50%';
+    moon.style.top = '50%';
+    document.body.appendChild(moon);
+}
+if (!sun) {
+    sun = document.createElement('img');
+    sun.id = 'sun';
+    sun.className = 'moving-sun-and-moon';
+    sun.src = 'assets/sun-and-moon/sun.png';
+    sun.style.position = 'fixed';
+    sun.style.left = '50%';
+    sun.style.top = '50%';
+    document.body.appendChild(sun);
+}
 const body = document.querySelector("body");
-const moonImg = document.querySelector("#moon-img");
+// const moonImg = document.querySelector("#moon-img");
 const follow = document.getElementById("follow");
 
 const r = 300;
@@ -12,6 +33,11 @@ let isFollowing = false;
 let extraPagesCreated = false;
 let extraStart = null;
 let extraHeight = 0;
+
+let isMoonFirstCreated = false;
+let isMoonSecCreated = false;
+let isMoonThirdCreated = false;
+let isMoonFourthCreated = false;
 
 // set initial position
 moon.style.transform = `translate(${-r}px, 0px)`;
@@ -25,18 +51,20 @@ function getScrollPercentage() {
     return perc;
 }
 
+// let moon_1 = document.createElement("div")
+
 // let moon and sun translate in a circle
 window.addEventListener("scroll", function () {
+
+
     const percentage = getScrollPercentage();
     const scrollTop = window.scrollY;
-
-
-
 
     // convert percentage (0..100) to radians (0..2π)
     const rotations = 2.25;
     const angle = (percentage / 100) * Math.PI * 2 * rotations;
-
+    const progress = (percentage / 100) * rotations;
+    console.log(progress);
     // compute positions && Brightness for moon and sun
     const sunX = Math.cos(angle) * r;
     const sunY = Math.sin(angle) * r;
@@ -44,6 +72,20 @@ window.addEventListener("scroll", function () {
     const moonY = Math.sin(angle + Math.PI) * r;
     const sunB = Math.abs(sunY) * (1 / 5) + 40;
     const moonB = Math.abs(moonY) * (1 / 3);
+
+    // change moon image each round to show its growth from incomplete to full
+    if (progress > 0 && progress < 1 && isMoonFirstCreated == false) {
+        moon.src = "assets/sun-and-moon/moon-1.png";
+        isMoonFirstCreated = true;
+    }
+    if (progress > 1 && progress < 2 && isMoonSecCreated == false) {
+        moon.src = "assets/sun-and-moon/moon-3.png";
+        isMoonSecCreated = true;
+    }
+    if (progress > 2 && isMoonThirdCreated == false) {
+        moon.src = "assets/sun-and-moon/moon-4.png";
+        isMoonThirdCreated = true;
+    }
 
     // apply transforms
     if (moon) moon.style.transform = 'translate(' + moonX + 'px, ' + moonY + 'px)';
@@ -70,26 +112,23 @@ window.addEventListener("scroll", function () {
             sun.style.filter = "brightness(" + sunB + "%)";
             body.classList.add("daytime-background");
         }
-
     }
 
-    // scale the last moon
+    // scale the last moon (apply to moon element)
     const finalStartPerc = 100 * (rotations - 1) / rotations;
     if (percentage > finalStartPerc) {
         const finalProgress = Math.max(0, Math.min(1, (percentage - finalStartPerc) / (100 - finalStartPerc)));
         const scale = 1 + finalProgress;
-        moonImg.style.transform = `scale(${scale})`;
+        if (moon) moon.style.transform = `translate(${moonX}px, ${moonY}px) scale(${scale})`;
     } else {
-        moonImg.style.transform = `scale(1)`;
+        if (moon) moon.style.transform = `translate(${moonX}px, ${moonY}px) scale(1)`;
     }
 
-    console.log(percentage);
-
-    //  true
+    // mark finished
     if (percentage >= 99) {
         scrollFinished = true;
     }
-});  
+});
 
 // create a function to follow the mouse
 function handleMouseMove(e) {
@@ -101,18 +140,18 @@ function handleMouseMove(e) {
 // only start the following of the grandpa when the scroll is finished and the moon is clicked
 moon.addEventListener("click", function () {
     console.log("Moon clicked! scrollFinished:", scrollFinished, "isFollowing:", isFollowing);  // ✅ 调试用
-    
+
     if (scrollFinished == true && isFollowing == false) {
         follow.style.display = "block";
         isFollowing = true;
         document.addEventListener("mousemove", handleMouseMove);
-        
+
         //set timeout to redirect to transition.html
         setTimeout(() => {
             window.location.href = "transition.html";
-        }, 500); 
+        }, 500);
     } else {
-        console.log("not enough conditions to click");  
+        console.log("not enough conditions to click");
     }
 });
 

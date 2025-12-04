@@ -1,38 +1,89 @@
-
-html, body {
-    overflow-x: auto;
-    overflow-y: auto;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  overflow-x: auto;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: black;
+  background-color: black;
 }
 
-
+/* unified rule for both sun and moon elements (as <img>) */
 .moving-sun-and-moon {
-    left: 50%;
-    top: 50%;
-    position: fixed;
-   
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+  transition: transform 220ms linear, opacity 220ms linear, filter 220ms linear;
+  transform-origin: center center;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
 }
 
-.moving-sun-and-moon img {
-    height: 200px;
-    width: 200px;
-margin-left: -50%;
-    margin-top: -50%;
 
+/* legacy class moved: prefer .moving-sun-and-moon now */
+.moving-moon {
+  /* kept for compatibility if referenced elsewhere */
+  left: 50%;
+  top: 50%;
+  position: fixed;
+  height: 200px;
+  width: 200px;
 }
+
+/* .moon-1 {
+  background-image: url(assets/sun-and-moon/moon-1.png);
+}
+
+.moon-2 {
+  background-image: url(assets/sun-and-moon/moon-3.png);
+}
+
+.moon-4 {
+  background-image: url(assets/sun-and-moon/moon-4.png);
+} */
+
+/* .moving-moon img {
+  height: 200px;
+  width: 200px;
+  margin-left: -50%;
+  margin-top: -50%;
+
+} */
+
 /* gardient color generator: https://cssgradient.io/ */
+/* keep gradient as element background */
 .daytime-background {
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   background-size: cover;           
   background-position: center center;
   background-attachment: fixed;     
-  min-height: 100vh;               
+  min-height: 100vh; 
+  position: relative;
+  /* make pseudo layer positioned nicely */
 }
+
+/* gif overlay for daytime, with controllable opacity */
+.daytime-background::before {
+  content: "";
+  position: fixed;
+  /* cover viewport */
+  inset: 0;
+  background: url("assets/moon-text.gif") center/cover no-repeat;
+  opacity: 0.2;
+  /* 调低这里的值以减少 GIF 明显度（0..1） */
+  pointer-events: none;
+  z-index: 0;
+  /* under content; ensure page content uses higher z-index */
+}
+
+/* same for night */
 .midnight-background {
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(32,32,59,1) 35%, rgba(18,41,46,1) 100%);
   background-size: cover;
@@ -41,25 +92,36 @@ margin-left: -50%;
   min-height: 100vh;
 }
 
-.windowHeight {
-    height: 100vh;
-    width: 100%;
+.midnight-background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("assets/moon-text.gif") center/cover no-repeat;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
 }
+
+.windowHeight {
+  height: 100vh;
+  width: 100%;
+}
+
 #follow {
-    position: fixed;
-    display: none;
-    pointer-events: none;
-    background: rgba(255,255,255,0.8);
-    padding: 4px 8px;
-    border-radius: 6px;
-    color: #222;
-    font-weight: 600;
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #222;
+  font-weight: 600;
 }
 
 
 #follow .grandpa {
-    display: inline-block;
-    transition: transform 1s ease-out, opacity 1s ease-out;
+  display: inline-block;
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 
@@ -67,32 +129,31 @@ margin-left: -50%;
   height: 800vh;
   width: 100%;
   margin: 0px;
-  padding:0px;
+  padding: 0px;
   background: linear-gradient(to bottom,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(32, 32, 59, 1) 12.5%,
-    rgba(60, 60, 100, 1) 25%,
-    rgba(120, 150, 200, 1) 50%,
-    rgba(140, 180, 220, 1) 75%,
-    rgba(197, 221, 233, 1) 100%
-  );
+      rgba(2, 0, 36, 1) 0%,
+      rgba(32, 32, 59, 1) 12.5%,
+      rgba(60, 60, 100, 1) 25%,
+      rgba(120, 150, 200, 1) 50%,
+      rgba(140, 180, 220, 1) 75%,
+      rgba(197, 221, 233, 1) 100%);
 }
 
 
 #small-town-background {
-  height: 100vh;  
+  height: 100vh;
   width: 100vw;
   overflow-x: scroll;
   display: block;
   margin: 0;
   background-color: rgba(197, 221, 233, 1);
-      
+
 }
 
 #small-town-background img {
-  height: 100%; 
-  width: auto;    
+  height: 100%;
+  width: auto;
   display: block;
-  object-fit: contain;  
+  object-fit: contain;
   margin: 0px;
 }
