@@ -86,6 +86,9 @@ function updateMoonAndSun() {
         isMoonThirdCreated = true;
         moon.style.cursor = 'pointer';
         moon.style.pointerEvents = 'auto';
+        body.style.setProperty('--moon-text-gif', 'url("assets/moon-text-2.gif")');
+        body.style.setProperty('--moon-text-opacity', '1');
+        body.style.setProperty('--star-opacity', '0');
     }
 
     // apply transforms
@@ -96,9 +99,11 @@ function updateMoonAndSun() {
     if (moon) {
         if (moonY >= 0) {
             moon.style.opacity = '0';
+            body.style.setProperty('--star-opacity', '0');
             // body.classList.remove("midnight-background");
         } else {
             moon.style.opacity = '1';
+            body.style.setProperty('--star-opacity', '0.2');
             moon.style.filter = "brightness(" + moonB + "%)";
             // backgroundImg.style.opacity = '0.2';
             // body.classList.add("midnight-background");
