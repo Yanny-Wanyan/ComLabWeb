@@ -1,11 +1,13 @@
 // create moon and sun elements in JS (no pre-existing HTML needed)
 let moon = document.querySelector('#moon');
 let sun = document.querySelector('#sun');
+let backgroundImg = document.querySelector('#background-image')
+
 if (!moon) {
     moon = document.createElement('img');
     moon.id = 'moon';
     moon.className = 'moving-sun-and-moon';
-    moon.src = '';
+    moon.src = 'assets/sun-and-moon/moon-1.png';
     moon.style.position = 'fixed';
     moon.style.left = '50%';
     moon.style.top = '50%';
@@ -51,12 +53,8 @@ function getScrollPercentage() {
     return perc;
 }
 
-// let moon_1 = document.createElement("div")
-
-// let moon and sun translate in a circle
-window.addEventListener("scroll", function () {
-
-
+// extract scroll handler into a separate function so it can be called on load and on scroll
+function updateMoonAndSun() {
     const percentage = getScrollPercentage();
     const scrollTop = window.scrollY;
 
@@ -73,6 +71,7 @@ window.addEventListener("scroll", function () {
     const sunB = Math.abs(sunY) * (1 / 5) + 40;
     const moonB = Math.abs(moonY) * (1 / 3);
 
+
     // change moon image each round to show its growth from incomplete to full
     if (progress > 0 && progress < 1 && isMoonFirstCreated == false) {
         moon.src = "assets/sun-and-moon/moon-1.png";
@@ -85,6 +84,8 @@ window.addEventListener("scroll", function () {
     if (progress > 2 && isMoonThirdCreated == false) {
         moon.src = "assets/sun-and-moon/moon-4.png";
         isMoonThirdCreated = true;
+        moon.style.cursor = 'pointer';
+        moon.style.pointerEvents = 'auto';
     }
 
     // apply transforms
@@ -95,25 +96,35 @@ window.addEventListener("scroll", function () {
     if (moon) {
         if (moonY >= 0) {
             moon.style.opacity = '0';
-            body.classList.remove("midnight-background");
+            // body.classList.remove("midnight-background");
         } else {
             moon.style.opacity = '1';
             moon.style.filter = "brightness(" + moonB + "%)";
-            body.classList.add("midnight-background");
+            // backgroundImg.style.opacity = '0.2';
+            // body.classList.add("midnight-background");
         }
     }
 
     if (sun) {
         if (sunY >= 0) {
             sun.style.opacity = '0';
-            body.classList.remove("daytime-background");
+            // body.classList.remove("daytime-background");
         } else {
             sun.style.opacity = '1';
             sun.style.filter = "brightness(" + sunB + "%)";
-            body.classList.add("daytime-background");
+            // body.classList.add("daytime-background");
         }
     }
 
+    if (backgroundImg) {
+        if (sunY >= 0) {
+            backgroundImg.style.opacity = '0.2';
+            backgroundImg.style.filter = "brightness(0.5)";
+        } else {
+            backgroundImg.style.opacity = '1';
+            backgroundImg.style.filter = "brightness(" + sunB + "%)";
+        }
+    }
     // scale the last moon (apply to moon element)
     const finalStartPerc = 100 * (rotations - 1) / rotations;
     if (percentage > finalStartPerc) {
@@ -128,6 +139,11 @@ window.addEventListener("scroll", function () {
     if (percentage >= 99) {
         scrollFinished = true;
     }
+}
+
+// let moon and sun translate in a circle
+window.addEventListener("scroll", function () {
+    updateMoonAndSun();
 });
 
 // create a function to follow the mouse
@@ -153,6 +169,11 @@ moon.addEventListener("click", function () {
     } else {
         console.log("not enough conditions to click");
     }
+});
+
+// Call updateMoonAndSun on page load to set initial state (percentage=0)
+document.addEventListener("DOMContentLoaded", function () {
+    updateMoonAndSun();
 });
 
 

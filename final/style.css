@@ -8,99 +8,56 @@ body {
 
 body {
   background-color: black;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  right: 10%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: url("assets/moon-text.gif") center/contain no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* single background image layer with controllable opacity and brightness */
+#background-image {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+#background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* unified rule for both sun and moon elements (as <img>) */
 .moving-sun-and-moon {
   position: fixed;
-  left: 50%;
-  top: 50%;
+  /* left: 50%;
+  top: 50%; */
   z-index: 100;
   pointer-events: none;
-  will-change: transform, opacity, filter;
-  transition: transform 220ms linear, opacity 220ms linear, filter 220ms linear;
-  transform-origin: center center;
   width: 120px;
   height: 120px;
   object-fit: contain;
   display: block;
+  transform-origin: center center;
 }
 
-
-/* legacy class moved: prefer .moving-sun-and-moon now */
-.moving-moon {
-  /* kept for compatibility if referenced elsewhere */
-  left: 50%;
-  top: 50%;
-  position: fixed;
-  height: 200px;
-  width: 200px;
-}
-
-/* .moon-1 {
-  background-image: url(assets/sun-and-moon/moon-1.png);
-}
-
-.moon-2 {
-  background-image: url(assets/sun-and-moon/moon-3.png);
-}
-
-.moon-4 {
-  background-image: url(assets/sun-and-moon/moon-4.png);
-} */
-
-/* .moving-moon img {
-  height: 200px;
-  width: 200px;
-  margin-left: -50%;
-  margin-top: -50%;
-
-} */
-
-/* gardient color generator: https://cssgradient.io/ */
-/* keep gradient as element background */
-.daytime-background {
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-  background-size: cover;           
-  background-position: center center;
-  background-attachment: fixed;     
-  min-height: 100vh; 
-  position: relative;
-  /* make pseudo layer positioned nicely */
-}
-
-/* gif overlay for daytime, with controllable opacity */
-.daytime-background::before {
-  content: "";
-  position: fixed;
-  /* cover viewport */
-  inset: 0;
-  background: url("assets/moon-text.gif") center/cover no-repeat;
-  opacity: 0.2;
-  /* 调低这里的值以减少 GIF 明显度（0..1） */
-  pointer-events: none;
-  z-index: 0;
-  /* under content; ensure page content uses higher z-index */
-}
-
-/* same for night */
-.midnight-background {
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(32,32,59,1) 35%, rgba(18,41,46,1) 100%);
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  min-height: 100vh;
-}
-
-.midnight-background::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("assets/moon-text.gif") center/cover no-repeat;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
-}
 
 .windowHeight {
   height: 100vh;
