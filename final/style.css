@@ -1,3 +1,20 @@
+/* Currently used */
+@font-face {
+  font-family: 'HanyiSenty';
+  src: url(assets/fonts/HanyiSenty\ Candy-color-mono.ttf)
+}
+
+/* Back-up */
+@font-face {
+  font-family: 'YRDZST';
+  src: url(assets/YRDZST\ Semibold.ttf);
+
+  @font-face {
+    font-family: 'lyric-font';
+    src: url(assets/lyric-font.ttf);
+  }
+}
+
 html,
 body {
   overflow-x: auto;
@@ -82,32 +99,35 @@ body::after {
   position: fixed;
   display: none;
   pointer-events: none;
-  background: rgba(255, 255, 255, 0.8);
   padding: 4px 8px;
-  border-radius: 6px;
-  color: #222;
-  font-weight: 600;
 }
 
 
 #follow .grandpa {
   display: inline-block;
   transition: transform 1s ease-out, opacity 1s ease-out;
+  font-family: 'YRDZST';
+  font-weight: 800;
+  font-size: 36px;
+  color: darkorange;
 }
 
 
 .extra-page {
-  height: 800vh;
+  height: 1000vh;
   width: 100%;
   margin: 0px;
   padding: 0px;
   background: linear-gradient(to bottom,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(32, 32, 59, 1) 12.5%,
-      rgba(60, 60, 100, 1) 25%,
-      rgba(120, 150, 200, 1) 50%,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(2, 0, 36, 1) 10%,
+      rgba(32, 32, 59, 1) 20%,
+      rgba(60, 60, 100, 1) 40%,
+      rgba(120, 150, 200, 1) 55%,
       rgba(140, 180, 220, 1) 75%,
-      rgba(197, 221, 233, 1) 100%);
+      rgba(197, 221, 233, 1) 90%,
+      rgba(255, 255, 255, 1) 100%);
+
 }
 
 
@@ -127,4 +147,30 @@ body::after {
   display: block;
   object-fit: contain;
   margin: 0px;
+}
+
+#supermarket-background {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: scroll;
+    display: block;
+    margin: 0;
+    background-color: white;
+    position: relative;
+}
+
+#supermarket-background img {
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0px;
+}
+
+
+.product-name{
+  font-family: 'YRDZST';
+  font-weight: 500;
+  font-size: 24px;
+  color: brown;
 }
