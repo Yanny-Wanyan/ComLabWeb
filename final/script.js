@@ -106,8 +106,7 @@ function updateMoonAndSun() {
             moon.style.opacity = '1';
             body.style.setProperty('--star-opacity', '0.2');
             moon.style.filter = "brightness(" + moonB + "%)";
-            // backgroundImg.style.opacity = '0.2';
-            // body.classList.add("midnight-background");
+
         }
     }
 
@@ -380,7 +379,6 @@ function createSupermarketHotspot(townBg, bgImg) {
     
     // transit to supermarket page
     supermarketHotspot.addEventListener('click', function() {
-        console.log('点击了supermarket');
         window.location.href = 'supermarket.html';  
     });
     
@@ -431,7 +429,7 @@ function updateGrandpaWalking(grandpaImg) {
     const startLeft = 50;
     const targetLeft = window.innerWidth - grandpaWidth - 70;
     const currentLeft = startLeft + (targetLeft - startLeft) * (scrollXPercent / 100);
-    
+    console.log(currentLeft)
     
     const walkPose = getGrandpaWalkPose(scrollXPercent);
     

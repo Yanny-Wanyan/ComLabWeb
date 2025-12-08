@@ -92,7 +92,7 @@ function createGrandmaContainer() {
     container.appendChild(grandmaImg);
     document.body.appendChild(container);
     
-    // hover 效果 - 替换图片
+    // hover 
     container.addEventListener('mouseenter', function() {
         const scrollXPercent = getSupermarketScrollXPercentage();
         if (scrollXPercent > 99) {
@@ -491,9 +491,9 @@ function addProductToCartPile(productName, relativeX, relativeY, rotation) {
     shoppingCart.appendChild(cartItem);
 }
 
-// 奶奶文字雨 - 点击奶奶时触发
+// grandma rains
 function createGrandmaRain() {
-    const duration = 2000;  // 持续时间（毫秒）
+    const duration = 2000;  
     
     function createRainDrop() {
         const drop = document.createElement('div');
@@ -512,17 +512,17 @@ function createGrandmaRain() {
         
         document.body.appendChild(drop);
         
-        // 动画掉落
+        
         const dropStartTime = Date.now();
-        const dropDuration = 1500 + Math.random() * 1500;  // 1.5-3秒随机下落时间
-        const endPosition = window.innerHeight - 60;  // 停在窗口底部（减去文字高度）
+        const dropDuration = 1500 + Math.random() * 1500;  
+        const endPosition = window.innerHeight - 60;  
         
         function animateDrop() {
             const elapsed = Date.now() - dropStartTime;
             const progress = elapsed / dropDuration;
             
             if (progress >= 1) {
-                // 到底后淡出
+                
                 drop.style.opacity = '0';
                 return;
             }
@@ -536,14 +536,14 @@ function createGrandmaRain() {
         animateDrop();
     }
     
-    // 用 for loop 产生雨滴
-    const rainCount = 30;  // 30个雨滴
+    
+    const rainCount = 30;  
     for (let i = 0; i < rainCount; i++) {
-        setTimeout(createRainDrop, Math.random() * 1500);  // 随机延迟 0-1.5秒
+        setTimeout(createRainDrop, Math.random() * 1500);  
     }
     
-    // 所有雨滴落完后跳转页面
+    
     setTimeout(() => {
         window.location.href = 'embroidery.html';
-    }, duration + 2000);  // 等待雨滴都掉完
+    }, duration + 2000);  
 }
