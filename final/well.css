@@ -1,0 +1,23 @@
+/* ricecake动画 */
+@keyframes ricecakeAnimation {
+    0% {
+        transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-50%, -50%) translateY(-120px) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    60% {
+        transform: translate(-50%, -50%) translateY(-120px) translateX(100px) rotate(45deg);
+        opacity: 1;
+    }
+    90% {
+        transform: translate(-50%, -50%) translateY(20px) translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.ricecake-animate {
+    animation: ricecakeAnimation 2.8s ease-in-out forwards;
+}

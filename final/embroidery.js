@@ -45,13 +45,13 @@ document.addEventListener("DOMContentLoaded", function(){
     
     // click event: split window
     centerDiv.addEventListener('click', function() {
-        // 创建新的左侧容器（70%）
+        // 创建新的左侧容器（60%）
         const leftContainer = document.createElement('div');
         leftContainer.id = 'left-container';
         leftContainer.style.position = 'fixed';
         leftContainer.style.top = '0';
         leftContainer.style.left = '0';
-        leftContainer.style.width = '70%';
+        leftContainer.style.width = 'calc(60% - 5px)';  // 减去右边margin
         leftContainer.style.height = '100%';
         leftContainer.style.backgroundColor = '#ecb57e';
         leftContainer.style.zIndex = '999';
@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function(){
         leftContainer.style.justifyContent = 'center';
         leftContainer.style.padding = '20px';
         leftContainer.style.boxSizing = 'border-box';
-        leftContainer.style.width = 'calc(70% - 10px)';  // 减去右边margin
         document.body.appendChild(leftContainer);
         
         // 改变 centerDiv 到新容器中心（按图片比例）
@@ -79,11 +78,11 @@ document.addEventListener("DOMContentLoaded", function(){
         centerDiv.style.overflow = 'hidden';
         leftContainer.appendChild(centerDiv);
         
-        // 改变 sewingBg（背景）到右边 30%
+        // 改变 sewingBg（背景）到右边 40%
         sewingBg.style.position = 'fixed';
-        sewingBg.style.left = 'calc(70% + 5px)';  // 加上margin
+        sewingBg.style.left = 'calc(60% + 5px)';  // 加上margin
         sewingBg.style.top = '0';
-        sewingBg.style.width = 'calc(30% - 5px)';  // 减去margin
+        sewingBg.style.width = 'calc(40% - 5px)';  // 减去margin
         sewingBg.style.height = '100%';
         sewingBg.style.zIndex = '998';
         sewingBg.style.overflow = 'hidden';  // crop 多出来的部分
@@ -202,6 +201,13 @@ document.addEventListener("DOMContentLoaded", function(){
                 customCursor.style.opacity = '0';
                 canvas.style.opacity = '0';
                 canvas.style.transition = 'opacity 0.6s ease-out';
+                
+                // 1秒后，leftContainer占满整个屏幕
+                setTimeout(() => {
+                    leftContainer.style.width = '100%';
+                    leftContainer.style.transition = 'width 0.8s ease-in-out';
+                    sewingBg.style.display = 'none';  // 隐藏sewingBg
+                }, 1000);
             }
         });
         
@@ -236,6 +242,69 @@ document.addEventListener("DOMContentLoaded", function(){
         });
         
         centerDiv.removeEventListener('click', arguments.callee);
+    });
+    
+    // ==================== 糍粑飘动和屏幕淡去动画 ====================
+    
+    // leftContainer占满屏幕后，监听点击事件
+    let mochiClickTriggered = false;
+    document.addEventListener('click', function() {
+        const leftContainer = document.querySelector('#left-container');
+        if (leftContainer && leftContainer.style.width === '100%' && !mochiClickTriggered) {
+            mochiClickTriggered = true;
+            
+            // 创建糍粑元素
+            const mochi = document.createElement('div');
+            mochi.textContent = '糍粑';
+            mochi.style.position = 'fixed';
+            mochi.style.fontSize = '48px';
+            mochi.style.fontWeight = 'bold';
+            mochi.style.color = 'darkorange';
+            mochi.style.zIndex = '10000';
+            mochi.style.pointerEvents = 'none';
+            mochi.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.3)';
+            document.body.appendChild(mochi);
+            
+            // 正弦波动画参数
+            const duration = 4000;  // 4秒
+            const startTime = Date.now();
+            const amplitude = window.innerHeight * 0.2;  // 波浪幅度
+            const frequency = 2;  // 波浪频率
+            
+            function animateMochi() {
+                const elapsed = Date.now() - startTime;
+                const progress = elapsed / duration;
+                
+                if (progress >= 1) {
+                    // 动画结束，屏幕淡去
+                    mochi.remove();
+                    document.body.style.opacity = '0';
+                    document.body.style.transition = 'opacity 1.5s ease-out';
+                    
+                    // 立即跳转到well_1.html（不等待透明度动画完成）
+                    
+                    window.location.href = 'well_1.html'
+                    return;
+                }
+                
+                // 从左到右移动
+                const x = progress * window.innerWidth;
+                
+                // 正弦波轨迹
+                const y = (window.innerHeight / 2) + Math.sin(progress * Math.PI * frequency) * amplitude;
+                
+                // 设置位置
+                mochi.style.left = x + 'px';
+                mochi.style.top = y + 'px';
+                
+                // 透明度逐渐变化
+                mochi.style.opacity = 1 - progress;
+                
+                requestAnimationFrame(animateMochi);
+            }
+            
+            animateMochi();
+        }
     });
 });
 

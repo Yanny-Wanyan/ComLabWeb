@@ -537,10 +537,26 @@ function createGrandmaRain() {
     }
     
     
-    const rainCount = 30;  
-    for (let i = 0; i < rainCount; i++) {
-        setTimeout(createRainDrop, Math.random() * 1500);  
-    }
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
+    setTimeout(createRainDrop, Math.random() * 100);
     
     
     setTimeout(() => {
