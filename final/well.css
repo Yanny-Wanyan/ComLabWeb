@@ -1,4 +1,4 @@
-/* ricecake动画 */
+/* ricecake animation */
 @keyframes ricecakeAnimation {
     0% {
         transform: translate(-50%, -50%) translateY(0) translateX(0) rotate(0deg);
@@ -12,12 +12,23 @@
         transform: translate(-50%, -50%) translateY(-120px) translateX(100px) rotate(45deg);
         opacity: 1;
     }
-    90% {
+    99% {
         transform: translate(-50%, -50%) translateY(20px) translateX(100px) rotate(45deg);
         opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(20px) translateX(100px) rotate(45deg);
+        opacity: 0;
+        pointer-events: none;
     }
 }
 
 .ricecake-animate {
     animation: ricecakeAnimation 2.8s ease-in-out forwards;
+    pointer-events: none;
+}
+
+@font-face {
+  font-family: 'YRDZST';
+  src: url(assets/YRDZST\Semibold.ttf);
 }

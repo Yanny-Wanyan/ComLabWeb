@@ -265,8 +265,9 @@ document.addEventListener("DOMContentLoaded", function(){
             mochi.style.position = 'fixed';
             mochi.style.fontSize = '48px';
             mochi.style.fontWeight = 'bold';
-            mochi.style.color = 'darkorange';
+            mochi.style.color = '#ffc500';
             mochi.style.zIndex = '10000';
+            mochi.style.fontFamily = 'YRDZST';
             mochi.style.pointerEvents = 'none';
             mochi.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.3)';
             document.body.appendChild(mochi);
