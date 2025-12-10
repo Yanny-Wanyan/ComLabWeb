@@ -424,6 +424,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     hama.style.fontSize = '40px';
                     hama.style.color = 'red';
                     hama.style.transition = 'font-size 0.3s';
+                    hama.style.fontFamily = 'YRDZST';
                     
                     const flyDuration = 8000;
                     const flyStartTime = Date.now();
