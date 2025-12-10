@@ -40,7 +40,7 @@ let isMoonFirstCreated = false;
 let isMoonSecCreated = false;
 let isMoonThirdCreated = false;
 let isMoonFourthCreated = false;
-let clickScrollPosition = 0;  // record scroll position when moon is clicked
+let clickScrollPosition = 0;
 
 // set initial position
 moon.style.transform = `translate(${-r}px, 0px)`;

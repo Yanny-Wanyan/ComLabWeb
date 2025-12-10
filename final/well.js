@@ -18,6 +18,26 @@ document.addEventListener("DOMContentLoaded", function () {
     background.appendChild(bgImg);
     document.body.appendChild(background);
 
+    // Create well instruction div
+    const instructionDiv = document.createElement('div');
+    instructionDiv.id = 'well-instruction-container';
+    instructionDiv.style.position = 'fixed';
+    instructionDiv.style.top = '5%';
+    instructionDiv.style.left = '5%';
+    instructionDiv.style.width = '300px';
+    instructionDiv.style.height = 'auto';
+    instructionDiv.style.zIndex = '100';
+    
+    const instructionImg = document.createElement('img');
+    instructionImg.src = 'assets/wellInstruction.gif';
+    instructionImg.style.width = '100%';
+    instructionImg.style.height = 'auto';
+    instructionImg.style.display = 'block';
+    instructionImg.style.opacity = '0.8';
+    
+    instructionDiv.appendChild(instructionImg);
+    document.body.appendChild(instructionDiv);
+
     // Ricecake container
     const ricecakeDiv = document.createElement('div');
     ricecakeDiv.id = 'ricecake-container';
@@ -50,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             ricecakeDiv.remove();
             document.getElementById('well-background').remove();
+            document.getElementById('well-instruction-container').remove();
 
             // Create deep well background
             const deepWellBackground = document.createElement('div');

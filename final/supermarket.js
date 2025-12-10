@@ -76,7 +76,7 @@ function createGrandmaContainer() {
     container.style.zIndex = '998'; 
     container.style.overflow = 'hidden';
     container.style.display = 'none';
-    container.style.cursor = 'pointer';  // 可点击指针
+    container.style.cursor = 'pointer';  
     
     // image
     let grandmaImg = document.createElement('img');
@@ -205,6 +205,27 @@ document.addEventListener("DOMContentLoaded", function() {
    //Initialize grandpa and grandma
     const grandpaContainer = createGrandpaContainer();
     const grandmaContainer = createGrandmaContainer();
+    
+    // Create shopping instruction div
+    const instructionDiv = document.createElement('div');
+    instructionDiv.id = 'shopping-instruction-container';
+    instructionDiv.style.position = 'fixed';
+    instructionDiv.style.top = '0%';
+    instructionDiv.style.left = '10%';
+    // instructionDiv.style.backgroundColor = 'rgba(177, 205, 209, 0.7)'
+    instructionDiv.style.width = '250px';
+    instructionDiv.style.height = '90px';
+    instructionDiv.style.zIndex = '1000';
+    
+    const instructionImg = document.createElement('img');
+    instructionImg.src = 'assets/shopping-instruction.gif';
+    instructionImg.style.backgroundColor = 'rgba(234, 221, 182, 0.7)';
+    instructionImg.style.width = '150%';
+    instructionImg.style.height = 'auto';
+    instructionImg.style.display = 'block';
+    
+    instructionDiv.appendChild(instructionImg);
+    document.body.appendChild(instructionDiv);
     
     // set scrolling event to the marketbackground
     const supermarketBg = document.querySelector('#supermarket-background');

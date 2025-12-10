@@ -55,6 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
         triggerDiv.style.display = 'none';
         triggerDiv.style.pointerEvents = 'none';
         
+        // Play ending music
+        const endingMusic = new Audio('assets/ending-music.mp3');
+        endingMusic.volume = 0.5;
+        endingMusic.play();
+        
         // Create semi-transparent overlay
         const overlayBg = document.createElement('div');
         overlayBg.style.position = 'fixed';
@@ -307,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function startWaving(magpie) {
         const waveStartTime = Date.now();
-        const waveDuration = 2000;  // 波浪效果2秒
+        const waveDuration = 2000;  
 
         function animateWave() {
             const elapsed = Date.now() - waveStartTime;
