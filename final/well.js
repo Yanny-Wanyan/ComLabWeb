@@ -418,6 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // 变成喜鹊，变大
                     hama.textContent = '喜鹊';
                     hama.style.fontSize = '40px';
+                    hama.style.color = 'red';
                     hama.style.transition = 'font-size 0.3s';
                     
                     // 飞一圈（绕屏幕中间，总共螺旋绕三圈然后消失）
@@ -462,6 +463,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                     h.style.transition = 'opacity 0.5s';
                                     setTimeout(() => {
                                         h.remove();
+                                        
+                                        // 所有蛤蟆都消失后，跳转到tree.html
+                                        window.location.href = 'tree.html';
                                     }, 500);
                                 });
                             }, 500);

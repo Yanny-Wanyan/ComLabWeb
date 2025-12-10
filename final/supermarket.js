@@ -107,7 +107,7 @@ function createGrandmaContainer() {
         }
     });
     
-    // click 效果 - 掉落大量"奶奶"文字并跳转
+    // click grandma image and create grandma rains
     container.addEventListener('click', function() {
         const scrollXPercent = getSupermarketScrollXPercentage();
         if (scrollXPercent > 99) {
@@ -164,7 +164,7 @@ function updateGrandpaWalking(container) {
     container.style.left = currentLeft + 'px';
     container.style.transform = `rotate(${walkPose}deg)`;
     
-    // 当滚动超过90%时，替换爷爷的图片
+    // swap grandpaImg
     const grandpaImg = container.querySelector('#grandpa-img');
     if (grandpaImg) {
         if (scrollXPercent > 90) {
@@ -247,11 +247,11 @@ function createHotspots(supermarketBg) {
     createHotspot(hotspotsContainer, 1 * ITEM_SPAN + 70, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酸奶');
     createHotspot(hotspotsContainer, 2 * ITEM_SPAN + 100, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '奶酪');
     createHotspot(hotspotsContainer, 3 * ITEM_SPAN + 150, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '黄油');
-    createHotspot(hotspotsContainer, 4 * ITEM_SPAN + 100, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
-    createHotspot(hotspotsContainer, 5 * ITEM_SPAN + 100, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '谷物');
-    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + MARGIN_LEFT, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '鸡蛋');
-    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + MARGIN_LEFT, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '培根');
-    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + MARGIN_LEFT, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '火腿');
+    createHotspot(hotspotsContainer, 4 * ITEM_SPAN + 150, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 5 * ITEM_SPAN + 120, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '谷物');
+    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + 80, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '鸡蛋');
+    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + 100, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '培根');
+    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + 100, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '火腿');
     createHotspot(hotspotsContainer, 9 * ITEM_SPAN + MARGIN_LEFT, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '香肠');
     createHotspot(hotspotsContainer, 10 * ITEM_SPAN + MARGIN_LEFT, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '肉类');
     createHotspot(hotspotsContainer, 11 * ITEM_SPAN + MARGIN_LEFT, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '家禽');
@@ -266,69 +266,69 @@ function createHotspots(supermarketBg) {
     
     // ============ second row ============
     createHotspot(hotspotsContainer, 0 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '巧克力');
-    createHotspot(hotspotsContainer, 1 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '零食');
-    createHotspot(hotspotsContainer, 2 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '饮料');
+    createHotspot(hotspotsContainer, 1 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '薯片');
+    createHotspot(hotspotsContainer, 2 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酒水');
     createHotspot(hotspotsContainer, 3 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '咖啡');
     createHotspot(hotspotsContainer, 4 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '茶');
     createHotspot(hotspotsContainer, 5 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '果汁');
-    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶2');
-    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酸奶2');
-    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '奶酪2');
-    createHotspot(hotspotsContainer, 9 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '黄油2');
-    createHotspot(hotspotsContainer, 10 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包2');
-    createHotspot(hotspotsContainer, 11 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '谷物2');
-    createHotspot(hotspotsContainer, 12 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '鸡蛋2');
-    createHotspot(hotspotsContainer, 13 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '培根2');
-    createHotspot(hotspotsContainer, 14 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '火腿2');
-    createHotspot(hotspotsContainer, 15 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '香肠2');
-    createHotspot(hotspotsContainer, 16 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '肉类2');
-    createHotspot(hotspotsContainer, 17 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '家禽2');
-    createHotspot(hotspotsContainer, 18 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '蔬菜2');
-    createHotspot(hotspotsContainer, 19 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '水果2');
+    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
+    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酸奶');
+    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '奶酪');
+    createHotspot(hotspotsContainer, 9 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '黄油');
+    createHotspot(hotspotsContainer, 10 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 11 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '谷物');
+    createHotspot(hotspotsContainer, 1 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '鸡蛋');
+    createHotspot(hotspotsContainer, 13 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '培根');
+    createHotspot(hotspotsContainer, 14 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '火腿');
+    createHotspot(hotspotsContainer, 15 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '香肠');
+    createHotspot(hotspotsContainer, 16 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 17 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '果汁');
+    createHotspot(hotspotsContainer, 18 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '蔬菜');
+    createHotspot(hotspotsContainer, 19 * ITEM_SPAN + MARGIN_LEFT, 1 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '水果');
     
     // ============ third row ============
-    createHotspot(hotspotsContainer, 0 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '沙拉2');
-    createHotspot(hotspotsContainer, 1 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '番茄2');
-    createHotspot(hotspotsContainer, 2 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '黄瓜2');
-    createHotspot(hotspotsContainer, 3 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '生菜2');
-    createHotspot(hotspotsContainer, 4 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '饼干2');
-    createHotspot(hotspotsContainer, 5 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果2');
-    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '巧克力2');
-    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '零食2');
-    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '饮料2');
-    createHotspot(hotspotsContainer, 9 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '咖啡2');
-    createHotspot(hotspotsContainer, 10 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '茶2');
-    createHotspot(hotspotsContainer, 11 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '果汁2');
-    createHotspot(hotspotsContainer, 12 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品1');
-    createHotspot(hotspotsContainer, 13 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品2');
-    createHotspot(hotspotsContainer, 14 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品3');
-    createHotspot(hotspotsContainer, 15 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品4');
-    createHotspot(hotspotsContainer, 16 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品5');
-    createHotspot(hotspotsContainer, 17 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品6');
-    createHotspot(hotspotsContainer, 18 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品7');
-    createHotspot(hotspotsContainer, 19 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品8');
+    createHotspot(hotspotsContainer, 0 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '沙拉');
+    createHotspot(hotspotsContainer, 1 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '番茄');
+    createHotspot(hotspotsContainer, 2 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '黄瓜');
+    createHotspot(hotspotsContainer, 3 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 4 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '饼干');
+    createHotspot(hotspotsContainer, 5 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '巧克力');
+    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '零食');
+    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '饮料');
+    createHotspot(hotspotsContainer, 9 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '咖啡');
+    createHotspot(hotspotsContainer, 10 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '茶');
+    createHotspot(hotspotsContainer, 11 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '果汁');
+    createHotspot(hotspotsContainer, 12 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
+    createHotspot(hotspotsContainer, 13 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 14 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 15 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 16 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 17 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
+    createHotspot(hotspotsContainer, 18 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 19 * ITEM_SPAN + MARGIN_LEFT, 2 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '罐头');
     
     // ============ fourth row ============
-    createHotspot(hotspotsContainer, 0 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品9');
-    createHotspot(hotspotsContainer, 1 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品10');
-    createHotspot(hotspotsContainer, 2 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品11');
-    createHotspot(hotspotsContainer, 3 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品12');
-    createHotspot(hotspotsContainer, 4 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品13');
-    createHotspot(hotspotsContainer, 5 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品14');
-    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品15');
-    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品16');
-    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品17');
-    createHotspot(hotspotsContainer, 9 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品18');
-    createHotspot(hotspotsContainer, 10 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品19');
-    createHotspot(hotspotsContainer, 11 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品20');
-    createHotspot(hotspotsContainer, 12 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品21');
-    createHotspot(hotspotsContainer, 13 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品22');
-    createHotspot(hotspotsContainer, 14 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品23');
-    createHotspot(hotspotsContainer, 15 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品24');
-    createHotspot(hotspotsContainer, 16 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品25');
-    createHotspot(hotspotsContainer, 17 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品26');
-    createHotspot(hotspotsContainer, 18 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品27');
-    createHotspot(hotspotsContainer, 19 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '商品28');
+    createHotspot(hotspotsContainer, 0 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 1 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 2 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 3 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
+    createHotspot(hotspotsContainer, 4 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酸奶');
+    createHotspot(hotspotsContainer, 5 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '罐头');
+    createHotspot(hotspotsContainer, 6 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 7 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酒水');
+    createHotspot(hotspotsContainer, 8 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
+    createHotspot(hotspotsContainer, 9 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '罐头');
+    createHotspot(hotspotsContainer, 10 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 11 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
+    createHotspot(hotspotsContainer, 12 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 13 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 14 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '面包');
+    createHotspot(hotspotsContainer, 15 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酸奶');
+    createHotspot(hotspotsContainer, 16 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
+    createHotspot(hotspotsContainer, 17 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酸奶');
+    createHotspot(hotspotsContainer, 18 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '糖果');
+    createHotspot(hotspotsContainer, 19 * ITEM_SPAN + MARGIN_LEFT, 3 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
     
     //assign to supermarket background
     supermarketBg.appendChild(hotspotsContainer);
@@ -348,12 +348,13 @@ function createHotspot(parent, left, top, width, height, name) {
     hotspot.style.backgroundColor = 'transparent';
     hotspot.style.cursor = 'pointer';
     hotspot.style.transition = 'background-color 0.3s';
-    hotspot.style.border = '2px solid red'; 
+    // hotspot.style.border = '2px solid red'; 
 
     
     // text
     let text = document.createElement('div');
     text.classList.add('product-name');
+    text.style.fontFamily ='YRDZST';
     text.textContent = name;
     text.style.position = 'absolute';
     text.style.width = '100%';
@@ -362,7 +363,7 @@ function createHotspot(parent, left, top, width, height, name) {
     text.style.alignItems = 'center';
     text.style.justifyContent = 'center';
     text.style.color = 'white';
-    text.style.fontSize = '12px';
+    text.style.fontSize = '16px';
     text.style.opacity = '0';
     text.style.transition = 'opacity 0.3s';
     text.style.pointerEvents = 'none';
@@ -406,9 +407,10 @@ function addProductToCart(productName, startLeft, startTop) {
     fallingProduct.style.top = startTop + 'px';
     fallingProduct.style.padding = '5px 10px';
     fallingProduct.style.backgroundColor = 'rgba(255, 150, 0, 0.8)';
+    fallingProduct.style.fontFamily = 'YRDZST';
     fallingProduct.style.color = 'white';
     fallingProduct.style.borderRadius = '5px';
-    fallingProduct.style.fontSize = '12px';
+    fallingProduct.style.fontSize = '16px';
     fallingProduct.style.zIndex = '1000';
     fallingProduct.style.pointerEvents = 'none';
     fallingProduct.style.whiteSpace = 'nowrap';
@@ -481,13 +483,13 @@ function addProductToCartPile(productName, relativeX, relativeY, rotation) {
     cartItem.style.padding = '4px 8px';
     cartItem.style.backgroundColor = 'rgba(255, 150, 0, 0.85)';
     cartItem.style.color = 'white';
-    cartItem.style.fontSize = '11px';
+    cartItem.style.fontSize = '16px';
     cartItem.style.borderRadius = '4px';
     cartItem.style.whiteSpace = 'nowrap';
     cartItem.style.transform = `rotate(${rotation}deg)`;
     cartItem.style.transformOrigin = 'left top';
     cartItem.style.pointerEvents = 'none';
-    
+    cartItem.style.fontFamily ='YRDZST';
     shoppingCart.appendChild(cartItem);
 }
 
@@ -509,6 +511,7 @@ function createGrandmaRain() {
         drop.style.whiteSpace = 'nowrap';
         drop.style.transform = 'rotate(' + (Math.random() - 0.5) * 60 + 'deg)';
         drop.style.opacity = '1';
+        drop.style.fontFamily ='YRDZST';
         
         document.body.appendChild(drop);
         

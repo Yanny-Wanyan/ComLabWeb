@@ -214,6 +214,9 @@ moon.addEventListener("click", function () {
             const scrolledSinceClick = currentScroll - clickScrollPosition;
             const maxScrollAfterClick = document.body.scrollHeight - window.innerHeight - clickScrollPosition;
             const percentageAfterClick = (scrolledSinceClick / maxScrollAfterClick) * 100;
+            
+            // 获取scrollXPercent
+            const scrollXPercent = getScrollXPercentage();
            
 
             // get all grandpa spans
@@ -308,7 +311,7 @@ moon.addEventListener("click", function () {
 
                 if (percentageAfterClick < 99.5) {
                     
-                    updateGrandpaEntrance(grandpaImg, percentageAfterClick);
+                    updateGrandpaEntrance(grandpaImg, percentageAfterClick, scrollXPercent);
                 }
             }
             
@@ -404,7 +407,7 @@ function getGrandpaWalkPose(percentage) {
 }
 
 // granpa quickly enter the page
-function updateGrandpaEntrance(grandpaImg, percentageAfterClick) {
+function updateGrandpaEntrance(grandpaImg, percentageAfterClick, scrollXPercent) {
     if (!grandpaImg) return;
 
     const entranceProgress = Math.min(1, (percentageAfterClick - 98) / 2);
@@ -418,6 +421,35 @@ function updateGrandpaEntrance(grandpaImg, percentageAfterClick) {
     
     
     grandpaImg.style.transform = `translateX(${currentLeft}px) rotate(${walkPose}deg)`;
+    
+    // 创建或更新右上角的文字图片 div
+    let goToMarketDiv = document.querySelector('#go-to-market-text-container');
+    if (!goToMarketDiv) {
+        goToMarketDiv = document.createElement('div');
+        goToMarketDiv.id = 'go-to-market-text-container';
+        goToMarketDiv.style.position = 'fixed';
+        goToMarketDiv.style.top = '50px';
+        goToMarketDiv.style.right = '50px';
+        goToMarketDiv.style.zIndex = '1000';
+        document.body.appendChild(goToMarketDiv);
+        
+        const textImg = document.createElement('img');
+        textImg.id = 'go-to-market-text-img';
+        textImg.src = 'assets/go-to-market-text.gif';
+        textImg.style.width = '300px';
+        textImg.style.height = 'auto';
+        goToMarketDiv.appendChild(textImg);
+    }
+    
+    // 根据scrollXPercent更换图片
+    // const textImg = document.querySelector('#go-to-market-text-img');
+    // if (textImg) {
+    //     if (scrollXPercent > 95) {
+    //         textImg.src = 'assets/go-to-market-text-2.gif';
+    //     } else {
+    //         textImg.src = 'assets/go-to-market-text.gif';
+    //     }
+    // }
 }
 //grandpa walking by scrolling
 function updateGrandpaWalking(grandpaImg) {
@@ -427,7 +459,7 @@ function updateGrandpaWalking(grandpaImg) {
     const grandpaWidth = 180;
    
     const startLeft = 50;
-    const targetLeft = window.innerWidth - grandpaWidth - 70;
+    const targetLeft = window.innerWidth - grandpaWidth - 500;
     const currentLeft = startLeft + (targetLeft - startLeft) * (scrollXPercent / 100);
     console.log(currentLeft)
     
@@ -435,4 +467,14 @@ function updateGrandpaWalking(grandpaImg) {
     
    
     grandpaImg.style.transform = `translateX(${currentLeft}px) rotate(${walkPose}deg)`;
+    
+    // 更新右上角文字图片
+    const textImg = document.querySelector('#go-to-market-text-img');
+    if (textImg) {
+        if (scrollXPercent > 95) {
+            textImg.src = 'assets/go-to-market-text-2.gif';
+        } else {
+            textImg.src = 'assets/go-to-market-text.gif';
+        }
+    }
 }

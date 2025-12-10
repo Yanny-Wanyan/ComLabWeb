@@ -1,18 +1,7 @@
-/* Currently used */
-@font-face {
-  font-family: 'HanyiSenty';
-  src: url(assets/fonts/HanyiSenty\ Candy-color-mono.ttf)
-}
 
-/* Back-up */
 @font-face {
   font-family: 'YRDZST';
-  src: url(assets/YRDZST\ Semibold.ttf);
-
-  @font-face {
-    font-family: 'lyric-font';
-    src: url(assets/lyric-font.ttf);
-  }
+  src: url(assets/YRDZST\Semibold.ttf);
 }
 
 html,

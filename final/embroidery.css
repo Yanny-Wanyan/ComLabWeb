@@ -17,3 +17,8 @@
 body{
     background-color: #aea481;
 }
+
+@font-face {
+  font-family: 'YRDZST';
+  src: url(assets/YRDZST\Semibold.ttf);
+}
