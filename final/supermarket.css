@@ -3,28 +3,6 @@
   src: url(assets/YRDZST\Semibold.ttf);
 }
 
-#small-town-background {
-  height: 100vh;
-  width: 100vw;
-  overflow-x: scroll;
-  display: block;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(197, 221, 233, 1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  border: 0;
-}
-
-
-#small-town-background img {
-  height: 100%;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  margin: 0px;
-}
 
 #supermarket-background {
     height: 100vh;

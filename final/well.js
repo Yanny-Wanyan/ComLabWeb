@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
     instructionDiv.style.width = '300px';
     instructionDiv.style.height = 'auto';
     instructionDiv.style.zIndex = '100';
-    
+
     const instructionImg = document.createElement('img');
     instructionImg.src = 'assets/wellInstruction.gif';
     instructionImg.style.width = '100%';
     instructionImg.style.height = 'auto';
     instructionImg.style.display = 'block';
     instructionImg.style.opacity = '0.8';
-    
+
     instructionDiv.appendChild(instructionImg);
     document.body.appendChild(instructionDiv);
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ricecakeDiv.classList.add('ricecake-animate');
 
         // Monitor animation end and set opacity to 0
-        ricecakeDiv.addEventListener('animationend', function() {
+        ricecakeDiv.addEventListener('animationend', function () {
             ricecakeDiv.style.opacity = '0';
         }, { once: true });
 
@@ -311,30 +311,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 hama.style.zIndex = '1';
                 hama.style.pointerEvents = 'none';
                 hama.style.transform = 'translate(-50%, -50%)';
-                
+
                 const duration = 1500;
                 const direction = Math.random() * Math.PI * 2;
                 const distance = Math.random() * 200 + 100;
-                
+
                 const startTime = Date.now();
                 const centerX = window.innerWidth / 2;
                 const centerY = window.innerHeight / 2;
                 const maxDistance = Math.min(centerX, centerY, window.innerWidth - centerX, window.innerHeight - centerY) - 50;
                 const finalDistance = Math.min(distance, maxDistance);
-                
+
                 function animateHamaFromCenter() {
                     const elapsed = Date.now() - startTime;
                     const progress = Math.min(elapsed / duration, 1);
-                    
+
                     const jumpCount = 5;
                     const jumpHeight = Math.sin(progress * Math.PI * jumpCount) * 50;
-                    
+
                     const targetX = centerX + Math.cos(direction) * finalDistance * progress;
                     const targetY = centerY + Math.sin(direction) * finalDistance * progress + jumpHeight;
-                    
+
                     hama.style.left = targetX + 'px';
                     hama.style.top = targetY + 'px';
-                    
+
                     if (progress < 1) {
                         requestAnimationFrame(animateHamaFromCenter);
                     } else {
@@ -342,18 +342,19 @@ document.addEventListener("DOMContentLoaded", function () {
                         hama.style.cursor = 'grab';
                     }
                 }
-                
+
                 // Click toad: shake and disappear
-                hama.addEventListener('click', function() {
+                hama.addEventListener('click', function () {
                     hama.style.pointerEvents = 'none';
-                    
+
                     let shakeCount = 0;
                     const shakeInterval = setInterval(() => {
-                        hama.style.transform = (shakeCount % 2 === 0) 
-                            ? 'translate(-50%, -50%) translateX(5px)' 
-                            : 'translate(-50%, -50%) translateX(-5px)';
-                        shakeCount++;
-                        
+                        if (shakeCount % 2 === 0) {
+                            hama.style.transform = 'translate(-50%, -50%) translateX(5px)';
+                        } else {
+                            hama.style.transform = 'translate(-50%, -50%) translateX(-5px)';
+                        }
+
                         if (shakeCount > 10) {
                             clearInterval(shakeInterval);
                             hama.style.opacity = '0';
@@ -362,12 +363,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     }, 50);
                 });
-                
+
                 hama.setAttribute('data-hama', 'true');
                 document.body.appendChild(hama);
                 animateHamaFromCenter();
             }
-            
+
             // Special toad (magpie)
             function createSpecialHama() {
                 const hama = document.createElement('div');
@@ -381,31 +382,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 hama.style.zIndex = '1';
                 hama.style.pointerEvents = 'none';
                 hama.style.transform = 'translate(-50%, -50%)';
-                
+
                 const duration = 1500;
                 const direction = Math.random() * Math.PI * 2;
                 const distance = Math.random() * 200 + 100;
-                
+
                 const startTime = Date.now();
                 const centerX = window.innerWidth / 2;
                 const centerY = window.innerHeight / 2;
                 const maxDistance = Math.min(centerX, centerY, window.innerWidth - centerX, window.innerHeight - centerY) - 50;
                 const finalDistance = Math.min(distance, maxDistance);
                 let isClicked = false;
-                
+
                 function animateHamaFromCenter() {
                     const elapsed = Date.now() - startTime;
                     const progress = Math.min(elapsed / duration, 1);
-                    
+
                     const jumpCount = 5;
                     const jumpHeight = Math.sin(progress * Math.PI * jumpCount) * 50;
-                    
+
                     const targetX = centerX + Math.cos(direction) * finalDistance * progress;
                     const targetY = centerY + Math.sin(direction) * finalDistance * progress + jumpHeight;
-                    
+
                     hama.style.left = targetX + 'px';
                     hama.style.top = targetY + 'px';
-                    
+
                     if (progress < 1) {
                         requestAnimationFrame(animateHamaFromCenter);
                     } else {
@@ -413,36 +414,36 @@ document.addEventListener("DOMContentLoaded", function () {
                         hama.style.cursor = 'not-allowed';
                     }
                 }
-                
+
                 // Click special toad: transform to magpie and fly
-                hama.addEventListener('click', function() {
+                hama.addEventListener('click', function () {
                     if (isClicked) return;
                     isClicked = true;
                     hama.style.pointerEvents = 'none';
-                    
+
                     hama.textContent = '喜鹊';
                     hama.style.fontSize = '40px';
                     hama.style.color = 'red';
                     hama.style.transition = 'font-size 0.3s';
                     hama.style.fontFamily = 'YRDZST';
-                    
+
                     const flyDuration = 8000;
                     const flyStartTime = Date.now();
                     const screenCenterX = window.innerWidth / 2;
                     const screenCenterY = window.innerHeight / 2;
                     const radius = 100;
-                    
+
                     function animateFly() {
                         const flyElapsed = Date.now() - flyStartTime;
                         const flyProgress = Math.min(flyElapsed / flyDuration, 1);
-                        
+
                         const totalRotations = 3;
                         const angle = flyProgress * totalRotations * Math.PI * 2;
                         const currentRadius = radius + radius * 5 * flyProgress;
-                        
+
                         hama.style.left = (screenCenterX + Math.cos(angle) * currentRadius) + 'px';
                         hama.style.top = (screenCenterY + Math.sin(angle) * currentRadius) + 'px';
-                        
+
                         if (flyProgress < 1) {
                             requestAnimationFrame(animateFly);
                         } else {
@@ -450,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             hama.style.transition = 'opacity 0.5s';
                             setTimeout(() => {
                                 hama.remove();
-                                
+
                                 // Remove all toads and navigate
                                 const allHamas = document.querySelectorAll('[data-hama]');
                                 allHamas.forEach(h => {
@@ -464,10 +465,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             }, 500);
                         }
                     }
-                    
+
                     animateFly();
                 });
-                
+
                 hama.setAttribute('data-special-hama', 'true');
                 document.body.appendChild(hama);
                 animateHamaFromCenter();
@@ -535,7 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         createSpecialHama();
                     }
                 }
-                
+
                 lastProgress = scrollProgress;
             });
         }, 2800);

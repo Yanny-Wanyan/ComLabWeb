@@ -241,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Create hospots for shopping
+//tutorial:https://css-tricks.com/snippets/css/complete-guide-grid/
 function createHotspots(supermarketBg) {
     // A container for all hotspots
     //allow me to adjust the overall position
@@ -263,6 +264,7 @@ function createHotspots(supermarketBg) {
     const ITEM_SPAN = WIDTH + MARGIN_LEFT + MARGIN_RIGHT;  // the total width for each hotspot
     const ROW_SPAN = HEIGHT + MARGIN_TOP + MARGIN_BOTTOM;  // the total height for each row
     
+    // there are too many I gave up arranging them one by one.
     // ============ first row ============
     createHotspot(hotspotsContainer, 0 * ITEM_SPAN + MARGIN_LEFT, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '牛奶');
     createHotspot(hotspotsContainer, 1 * ITEM_SPAN + 70, 0 * ROW_SPAN + MARGIN_TOP, WIDTH, HEIGHT, '酸奶');
@@ -439,6 +441,7 @@ function addProductToCart(productName, startLeft, startTop) {
     document.body.appendChild(fallingProduct);
     
     // Get the relative positions
+    //Tutorial: https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
     const cartRect = shoppingCart.getBoundingClientRect();
     const containerRect = grandpaContainer.getBoundingClientRect();
     const cartRelativeLeft = cartRect.left - containerRect.left;
